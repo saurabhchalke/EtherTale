@@ -1,6 +1,8 @@
 # EtherTale
 
-EtherTale is an interactive story generation app built with Next.js and TypeScript. It uses the OpenAI API to generate immersive and engaging stories based on user-selected themes, settings, and characters.
+EtherTale is an interactive story generation app built with MACI, Next.js and TypeScript. It uses the OpenAI API to generate immersive and engaging stories based on user-selected themes, settings, and characters.
+
+This uses PSE's MACI voting system to ensure censipnship resistance and privacy for the users for the onchain voting system.
 
 ## Features
 
