@@ -1,82 +1,94 @@
-# EtherTale
+# EtherTale: Weave Stories Together, Forever 🌿📖🔗
 
-EtherTale is an interactive story generation app built with MACI, Next.js and TypeScript. It uses the OpenAI API to generate immersive and engaging stories based on user-selected themes, settings, and characters.
+EtherTale is an innovative, decentralized storytelling platform that combines the power of AI-generated narratives with the security and transparency of the Minimal Anti-Collusion Infrastructure (MACI) voting system. With EtherTale, users can collaboratively create immersive, branching storylines by voting on the direction of the tale at each decision point.
 
-This uses PSE's MACI voting system to ensure censipnship resistance and privacy for the users for the onchain voting system.
+This project was built as part of [ETHTaipei 2024](https://ethtaipei.org/).
 
-## Features
+## Features ✨
 
-- Choose from a variety of story themes, including Fantasy, Sci-Fi, Mystery, Romance, and Thriller.
-- Select a story setting or let the AI generate a random one for you.
-- Add side characters to your story with customizable attributes.
-- Choose between free text input or choice-based narrative mechanisms.
-- Experience a unique and tailored story every time you play.
+- 🤖 AI-generated story content using advanced language models
+- 🔒 Secure and transparent voting with the MACI protocol
+- 🌿 Immersive, branching narratives that evolve based on community choices
+- 🎨 Sleek, cyberpunk-inspired user interface
+- ⚡️ Real-time updates and seamless user experience
 
-## Prerequisites
+## How It Works 🛠️
 
-Before running the app, make sure you have the following:
+1. 🚀 Users join an EtherTale story and are presented with an AI-generated story snippet.
+2. 🤔 At key decision points, users vote on the direction they want the story to take using the MACI protocol.
+3. 🗳️ Votes are securely tallied, ensuring privacy and preventing collusion.
+4. 🔮 The winning choice is revealed, and the AI continues the story based on the community's decision.
+5. 🔄 The process repeats, with users shaping the story at each junction until the tale reaches its conclusion.
 
-- Node.js (version 12 or above)
-- npm (version 6 or above)
-- An OpenAI API key
+## Technologies Used 💻
 
-## Installation
+- 🐍 Python: Backend server and AI integration
+- 🗳️ MACI: Secure and private voting system
+- ⚛️ React: Frontend user interface
+- 🌐 Next.js: Server-side rendering and routing
+- 💅 Styled Components: CSS-in-JS styling
+- 🔌 WebSocket: Real-time communication between server and client
 
-1. Clone the repository:
+## Getting Started 🏁
 
-```bash
-git clone https://github.com/your-username/ethertale.git
-```
+### Clone the repository
 
-2. Navigate to the project directory:
+`git clone https://github.com/saurabhchalke/ethertale.git`
+
+### Install dependencies
 
 ```bash
 cd ethertale
-```
-
-3. Install the dependencies:
-
-```bash
 npm install
 ```
 
-4. Create a .env file in the root directory and add your OpenAI API key:
+### Set up the backend server
 
 ```bash
-OPENAI_API_KEY=your-api-key
+cd server
+pip install -r requirements.txt
 ```
 
-5. Start the development server:
+### Start the backend server
 
 ```bash
+python server.py
+```
+
+### Start the frontend server
+
+```bash
+cd ../client
 npm run dev
 ```
 
-6. Open your browser and visit http://localhost:3000 to see the app in action.
 
-## Usage
+Open your browser and navigate to http://localhost:3000 to start weaving stories with EtherTale!
 
-1. On the home page, select a story theme from the dropdown menu.
-2. Choose a story setting or leave it blank for a random setting.
-3. Add side characters to your story by entering their details in the input field.
-4. Select a narration mechanism (free text or choice-based).
-5. Click the "Generate Story" button to start your interactive story.
-6. Follow the prompts and make choices to progress through the story.
+## Contributing 🤝
 
-Enjoy your unique story experience!
+We welcome contributions from the community! If you'd like to contribute to EtherTale, please follow these steps:
 
-## Technologies Used
+1. Fork the repository
+2. Create a new branch for your feature or bug fix
+3. Make your changes and commit them with descriptive messages
+4. Push your changes to your forked repository
+5. Submit a pull request to the main EtherTale repository
 
-- Next.js
-- TypeScript
-- React
-- Tailwind CSS
-- Mistral
+## License 📜
 
-## License
+EtherTale is released under the MIT License.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+## Acknowledgements 🙏
 
-## Contributing
+We would like to thank the following projects and resources that made EtherTale possible:
 
-Contributions are welcome! Feel free to open an issue or submit a pull request if you have any suggestions or improvements to the project.
+- MACI - Minimal Anti-Collusion Infrastructure
+- OpenAI - AI language models
+- Next.js - React framework for server-side rendering and routing
+- Styled Components - CSS-in-JS library
+
+Let's weave stories together, forever! 🌿📖🔗
+
+
+
