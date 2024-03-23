@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import { createRoot } from 'react-dom/client';
 import 'react-toastify/dist/ReactToastify.css';
 import Layout from '../components/Layout';
 import Spinner from '../components/Spinner';
@@ -21,15 +22,24 @@ const Home: React.FC = () => {
   const [playerInput, setPlayerInput] = useState('');
 
   const handleGenerateStory = async () => {
+    console.log('Generating Story...');
     setLoading(true);
     setStory('');
     setChoices([]);
 
-    const theme = selectedTheme;
-    const setting = await getStorySetting(setSelectedSetting);
-    const sideCharacters = await getSideCharacters();
-    let storyRounds = 5; // Default story rounds
-    const mechanism = await getNarrationMechanism(setSelectedMechanism);
+    // const theme = selectedTheme;
+    const theme = 'Sci-Fi'; // Default theme
+    // const setting = await getStorySetting(setSelectedSetting);
+    const setting = ''; // Default story setting
+    // const sideCharacters = await getSideCharacters();
+    const sideCharacters: string[] = []; // Default side characters
+    let storyRounds = 10; // Default story rounds
+    // const mechanism = await getNarrationMechanism(setSelectedMechanism);
+    const mechanism = 'choice_based'; // Default narration mechanism
+
+    console.log(`Selected Theme: ${theme}`);
+    console.log(`Selected Setting: ${setting}`);
+    console.log(`Selected Mechanism: ${mechanism}`);
 
     const withChoices = mechanism === 'choice_based';
 
@@ -45,6 +55,8 @@ const Home: React.FC = () => {
       process.env.GPT_MODEL!,
       1.2
     );
+
+    console.log('Story Setting GPT Response:', storySettingGptResponse);
 
     const storySetting = JSON.parse(storySettingGptResponse);
 
@@ -70,6 +82,8 @@ const Home: React.FC = () => {
       );
       messages.push({ role: 'assistant', content: response });
 
+      console.log('GPT Response:', response);
+
       if (storyRounds < 1) {
         break;
       }
@@ -79,13 +93,28 @@ const Home: React.FC = () => {
       if (withChoices) {
         const choicesText = response.split('\n').slice(-3);
         setChoices(choicesText.map((choice) => choice.slice(3)));
+
         const playerChoice = await new Promise<string>((resolve) => {
           const handleChoiceChange = (value: string) => {
             setSelectedChoice(value);
             resolve(value);
           };
-          handleChoiceChange('');
+
+          const selectionInput = document.createElement('div');
+          selectionInput.setAttribute('id', 'selection-input-container');
+          document.body.appendChild(selectionInput);
+
+          const root = createRoot(selectionInput);
+          root.render(
+            <SelectionInput
+              title="Choose your action"
+              options={choicesText}
+              value=""
+              onChange={handleChoiceChange}
+            />
+          );
         });
+
         messages.push({ role: 'user', content: playerChoice });
       } else {
         const playerInput = await new Promise<string>((resolve) => {
@@ -93,8 +122,23 @@ const Home: React.FC = () => {
             setPlayerInput(value);
             resolve(value);
           };
-          handleInputChange('');
+
+          const selectionInput = document.createElement('div');
+          selectionInput.setAttribute('id', 'selection-input-container');
+          document.body.appendChild(selectionInput);
+
+          const root = createRoot(selectionInput);
+          root.render(
+            <SelectionInput
+              title="Enter your action"
+              options={[]}
+              allowCustomInput={true}
+              value=""
+              onChange={handleInputChange}
+            />
+          );
         });
+
         let finalPlayerInput = playerInput;
         const availableSideChars = getRoundSideCharacters(storyRounds, sideCharactersWithOccurrence);
         if (availableSideChars.length > 0) {
@@ -126,7 +170,7 @@ const Home: React.FC = () => {
         <p className="text-lg mb-8 text-gray-300">Weave Stories Together. Forever.</p>
         <div className="mb-8">
           <SelectionInput
-            label="Story Theme"
+            title="Story Theme"
             options={['Fantasy', 'Sci-Fi', 'Mystery', 'Romance', 'Thriller']}
             value={selectedTheme}
             onChange={setSelectedTheme}
@@ -149,13 +193,9 @@ const Home: React.FC = () => {
                 <div className="mt-8">
                   <h3 className="text-xl font-bold mb-4">Choices:</h3>
                   {choices.map((choice, index) => (
-                    <SelectionInput
-                      key={index}
-                      label={`Choice ${index + 1}`}
-                      options={[choice]}
-                      value={selectedChoice}
-                      onChange={setSelectedChoice}
-                    />
+                    <div key={index} className="mb-2">
+                      {choice}
+                    </div>
                   ))}
                 </div>
               )}

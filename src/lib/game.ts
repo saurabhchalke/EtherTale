@@ -1,5 +1,7 @@
+import SelectionInput from "@/components/SelectionInput";
 import { gameSetupPrint, errorPrint } from "./print";
-import SelectionInput from "../components/SelectionInput";
+import { createRoot } from "react-dom/client";
+import React from "react";
 
 export const getStoryRounds = (): number => {
   const lengthMap: { [key: string]: string } = {
@@ -55,13 +57,20 @@ export const getSideCharacters = async (): Promise<string[]> => {
         resolve(value);
       };
 
-      SelectionInput({
-        title: "Enter a side character (or leave blank to finish)",
-        options: [],
-        allowCustomInput: true,
-        value: "",
-        onChange: handleCharacterChange,
-      });
+      const selectionInput = document.createElement("div");
+      selectionInput.setAttribute("id", "selection-input-container");
+      document.body.appendChild(selectionInput);
+
+      const root = createRoot(selectionInput);
+      root.render(
+        React.createElement(SelectionInput, {
+          title: "Enter a side character (or leave blank to finish)",
+          options: [],
+          allowCustomInput: true,
+          value: "",
+          onChange: handleCharacterChange,
+        })
+      );
     });
 
     if (character.trim() === "") {
@@ -83,19 +92,26 @@ export const getStorySetting = async (
       resolve(value || null);
     };
 
-    SelectionInput({
-      title: "Choose your story setting",
-      options: [
-        "Castle",
-        "Village",
-        "Abandoned House",
-        "Space Station",
-        "Island",
-      ],
-      allowCustomInput: true,
-      value: "",
-      onChange: handleSettingChange,
-    });
+    const selectionInput = document.createElement("div");
+    selectionInput.setAttribute("id", "selection-input-container");
+    document.body.appendChild(selectionInput);
+
+    const root = createRoot(selectionInput);
+    root.render(
+      React.createElement(SelectionInput, {
+        title: "Choose your story setting",
+        options: [
+          "Castle",
+          "Village",
+          "Abandoned House",
+          "Space Station",
+          "Island",
+        ],
+        allowCustomInput: true,
+        value: "",
+        onChange: handleSettingChange,
+      })
+    );
   });
 };
 
@@ -108,12 +124,19 @@ export const getNarrationMechanism = async (
       resolve(value.toLowerCase().replace(" ", "_"));
     };
 
-    SelectionInput({
-      title: "Choose your narration mechanism",
-      options: ["Free Text", "Choice Based"],
-      value: "",
-      onChange: handleMechanismChange,
-    });
+    const selectionInput = document.createElement("div");
+    selectionInput.setAttribute("id", "selection-input-container");
+    document.body.appendChild(selectionInput);
+
+    const root = createRoot(selectionInput);
+    root.render(
+      React.createElement(SelectionInput, {
+        title: "Choose your narration mechanism",
+        options: ["Free Text", "Choice Based"],
+        value: "",
+        onChange: handleMechanismChange,
+      })
+    );
   });
 };
 
