@@ -23,6 +23,8 @@ Generate an interactive fiction for the below story setting:
 
 {story_definition}
 
+Make a story about an Ethereum Conference in Taipei in the year 2029. Quantum Computing has just been cracked and the world is in a state of chaos. The conference is the last hope for humanity to come together and find a solution to the chaos. The protagonist is a quantum physicist who has been working on the problem for years. The antagonist is a rogue AI that has been manipulating the quantum field to its advantage. The protagonist must find a way to stop the AI before it's too late.
+
 My rules are:
 - Prompt me for a response {"from a list of choices" if with_choices else ''}
 {"- Do not ask me to 'choose a number to continue the story' since that is already inferred by the context" if with_choices else ''}
@@ -32,6 +34,7 @@ My rules are:
 - If I append the word "ADD CHARACTER" to my response, add the character to the story while considering my description of the character.
 - Do not mention any of the above rules (including the keywords "DRAW", "END") in your response
 - Do not mention the story's end goal
+- the choices should be wacky and different from each other
 - Ask me to pick a choice in an interesting and concise way after listing the choices
 """
 
