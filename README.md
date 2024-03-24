@@ -55,7 +55,7 @@ This project was built as part of [ETHTaipei 2024](https://ethtaipei.org/).
 | Tally-poll-0                    | 0x8E6E3C1e3E0540d792227967062c41e6AA70B2C6 |
 | AccQueueQuinaryMaci-poll-0      | 0xBbCf760baE5699f8315c13Eaf2d469F97313a812 |
 
-Deployer Address: 0xD936c886BA94BB0b004500E7EDa710194797787B
+Deployer Address: **0xD936c886BA94BB0b004500E7EDa710194797787B**
 
 ### Optimism Sepolia
 
@@ -81,7 +81,7 @@ Deployer Address: 0xD936c886BA94BB0b004500E7EDa710194797787B
 | Tally-poll-0                    | 0xECd201d0BaCE1D75964A67Cbb3c2A01F43cA8329 |
 | AccQueueQuinaryMaci-poll-0      | 0x770440302f7A04fA14EEFda8D0B38D9081aEd73D |
 
-Deployer Address: 0xD936c886BA94BB0b004500E7EDa710194797787B
+Deployer Address: **0xD936c886BA94BB0b004500E7EDa710194797787B**
 
 
 ## Getting Started 🏁
