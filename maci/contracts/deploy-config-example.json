@@ -1,0 +1,104 @@
+{
+  "sepolia": {
+    "ConstantInitialVoiceCreditProxy": {
+      "deploy": true,
+      "amount": 99
+    },
+    "FreeForAllGatekeeper": {
+      "deploy": false
+    },
+    "EASGatekeeper": {
+      "deploy": true,
+      "easAddress": "0xC2679fBD37d54388Ce493F1DB75320D236e1815e",
+      "schema": "0xe2636f31239f7948afdd9a9c477048b7fc2a089c347af60e3aa1251e5bf63e5c",
+      "attester": "attester-address"
+    },
+    "MACI": {
+      "stateTreeDepth": 10,
+      "gatekeeper": "EASGatekeeper"
+    },
+    "VkRegistry": {
+      "stateTreeDepth": 10,
+      "intStateTreeDepth": 1,
+      "messageTreeDepth": 2,
+      "voteOptionTreeDepth": 2,
+      "messageBatchDepth": 1,
+      "processMessagesZkey": "../cli/zkeys/ProcessMessages_10-2-1-2_test/ProcessMessages_10-2-1-2_test.0.zkey",
+      "tallyVotesZkey": "../cli/zkeys/TallyVotes_10-1-2_test/TallyVotes_10-1-2_test.0.zkey"
+    },
+    "Poll": {
+      "pollDuration": 30,
+      "coordinatorPubkey": "macipk.ea638a3366ed91f2e955110888573861f7c0fc0bb5fb8b8dca9cd7a08d7d6b93",
+      "subsidyEnabled": false,
+      "useQuadraticVoting": true
+    }
+  },
+  "optimism_sepolia": {
+    "ConstantInitialVoiceCreditProxy": {
+      "deploy": true,
+      "amount": 99
+    },
+    "FreeForAllGatekeeper": {
+      "deploy": false
+    },
+    "EASGatekeeper": {
+      "deploy": true,
+      "easAddress": "0xC2679fBD37d54388Ce493F1DB75320D236e1815e",
+      "schema": "0xe2636f31239f7948afdd9a9c477048b7fc2a089c347af60e3aa1251e5bf63e5c",
+      "attester": "0xC2679fBD37d54388Ce493F1DB75320D236e1815e"
+    },
+    "MACI": {
+      "stateTreeDepth": 10,
+      "gatekeeper": "EASGatekeeper"
+    },
+    "VkRegistry": {
+      "stateTreeDepth": 10,
+      "intStateTreeDepth": 1,
+      "messageTreeDepth": 2,
+      "voteOptionTreeDepth": 2,
+      "messageBatchDepth": 1,
+      "processMessagesZkey": "../cli/zkeys/ProcessMessages_10-2-1-2_test/ProcessMessages_10-2-1-2_test.0.zkey",
+      "tallyVotesZkey": "../cli/zkeys/TallyVotes_10-1-2_test/TallyVotes_10-1-2_test.0.zkey"
+    },
+    "Poll": {
+      "pollDuration": 30,
+      "coordinatorPubkey": "macipk.ea638a3366ed91f2e955110888573861f7c0fc0bb5fb8b8dca9cd7a08d7d6b93",
+      "subsidyEnabled": false,
+      "useQuadraticVoting": true
+    }
+  },
+  "linea_goerli": {
+    "ConstantInitialVoiceCreditProxy": {
+      "deploy": true,
+      "amount": 99
+    },
+    "FreeForAllGatekeeper": {
+      "deploy": false
+    },
+    "EASGatekeeper": {
+      "deploy": false,
+      "easAddress": "0xC2679fBD37d54388Ce493F1DB75320D236e1815e",
+      "schema": "0xe2636f31239f7948afdd9a9c477048b7fc2a089c347af60e3aa1251e5bf63e5c",
+      "attester": "0xC2679fBD37d54388Ce493F1DB75320D236e1815e"
+    },
+    "MACI": {
+      "stateTreeDepth": 10,
+      "gatekeeper": "EASGatekeeper"
+    },
+    "VkRegistry": {
+      "stateTreeDepth": 10,
+      "intStateTreeDepth": 1,
+      "messageTreeDepth": 2,
+      "voteOptionTreeDepth": 2,
+      "messageBatchDepth": 1,
+      "processMessagesZkey": "../cli/zkeys/ProcessMessages_10-2-1-2_test/ProcessMessages_10-2-1-2_test.0.zkey",
+      "tallyVotesZkey": "../cli/zkeys/TallyVotes_10-1-2_test/TallyVotes_10-1-2_test.0.zkey"
+    },
+    "Poll": {
+      "pollDuration": 30,
+      "coordinatorPubkey": "macipk.ea638a3366ed91f2e955110888573861f7c0fc0bb5fb8b8dca9cd7a08d7d6b93",
+      "subsidyEnabled": false,
+      "useQuadraticVoting": true
+    }
+  }
+}
