@@ -2,6 +2,8 @@
 
 EtherTale is an innovative, decentralized storytelling platform that combines the power of AI-generated narratives with the security and transparency of the Minimal Anti-Collusion Infrastructure (MACI) voting system. With EtherTale, users can collaboratively create immersive, branching storylines by voting on the direction of the tale at each decision point.
 
+![App Demo](public/demo.gif)
+
 This project was built as part of [ETHTaipei 2024](https://ethtaipei.org/).
 
 ## Features ✨
